@@ -1,0 +1,18 @@
+author: Ingo Mohr
+name: 'Hello World'
+description : Example action to just say 'Hello World'
+
+inputs:
+  who-to-greet: #id of the input
+    description: 'Name of the person/entity to greet'
+    required: false
+    default: 'World'
+outputs:
+  time: #id of the output
+    description: 'time greeting was sent'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{inputs.who-greet}}
